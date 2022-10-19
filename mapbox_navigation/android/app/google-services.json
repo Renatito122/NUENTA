@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "58645764182",
+    "project_id": "flutter-project-nuenta",
+    "storage_bucket": "flutter-project-nuenta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58645764182:android:3d4f608725d316eac9c3f7",
+        "android_client_info": {
+          "package_name": "com.example.mapbox_navigation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58645764182-urb72srg3sf05b5h93k0gud2p6ub585k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjik6AFO6vY9Q3l1ci3US5BWvQhvEptjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58645764182-urb72srg3sf05b5h93k0gud2p6ub585k.apps.googleusercontent.com",              "client_type": 3
+            },
+            {
+              "client_id": "58645764182-qtoouscghtmg0q5df15kgr7r5l7p8ckl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mapboxNavigation"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
