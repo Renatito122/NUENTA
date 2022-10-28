@@ -1,36 +1,40 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:logger/logger.dart';
 
 List<Map> restaurants = [];
 List<Map> users = [];
+var logger = Logger();
 
-void getRes() async{
-  CollectionReference _collectionRef =FirebaseFirestore.instance.collection('restaurants');
-  restaurants= await getData(_collectionRef); 
+void getRes() async {
+  CollectionReference _collectionRef =
+      FirebaseFirestore.instance.collection('restaurants');
+  restaurants = await getData(_collectionRef);
+  logger.d(restaurants);
   print('RES: $restaurants');
 }
 
-void getUsers() async{
-  CollectionReference _collectionRef2 =FirebaseFirestore.instance.collection('users');
-  users= await getData(_collectionRef2); 
+void getUsers() async {
+  CollectionReference _collectionRef2 =
+      FirebaseFirestore.instance.collection('users');
+  users = await getData(_collectionRef2);
   print('USERS: $users');
 }
 
-
 Future<List<Map>> getData(_collectionRef) async {
-    // Get docs from collection reference
-    QuerySnapshot querySnapshot = await _collectionRef.get();
-    // Get data from docs and convert map to List
-    final allData = querySnapshot.docs.map((doc) => doc.data() as Map);
-    Map map = new Map();
-    for (var v in allData){
-      map = v;
-    }
-    List<Map> list = [];
-    for (final val in map.values){
-      list.add(val as Map);
-    }
-    print('OLA');
-    return list;
+  // Get docs from collection reference
+  QuerySnapshot querySnapshot = await _collectionRef.get();
+  // Get data from docs and convert map to List
+  final allData = querySnapshot.docs.map((doc) => doc.data() as Map);
+  Map map = new Map();
+  for (var v in allData) {
+    map = v;
+  }
+  List<Map> list = [];
+  for (final val in map.values) {
+    list.add(val as Map);
+  }
+  print('OLA');
+  return list;
 }
 /*
 [
