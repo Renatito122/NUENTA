@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mapbox_navigation/screens/home_management.dart';
 import 'package:mapbox_navigation/screens/restaurants_table.dart';
 import 'package:mapbox_navigation/constants/restaurants.dart';
+import 'package:mapbox_navigation/screens/forum.dart';
+import 'package:mapbox_navigation/screens/forum_detail.dart';
 
 class DetailPage extends StatefulWidget {
   final String name;
@@ -200,6 +202,35 @@ class _DetailPageState extends State<DetailPage> {
                             },
                             child: Text(
                               "See route",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 17),
+                            ),
+                          ),
+                        ),
+                        ButtonTheme(
+                          minWidth: 200,
+                          height: 50,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              backgroundColor: Color(0xffd17842),
+                            ),
+                            onPressed: () {
+                              (BuildContext context) => new ForumPage(
+                                    title: 'Forum',
+                                    key: null,
+                                  );
+                              // Navigator.of(context)
+                              //     .pushReplacement(MaterialPageRoute(
+                              //         builder: (_) => HomeManagement(
+                              //               res_name: widget.name,
+                              //             )));
+                            },
+                            child: Text(
+                              "Forum",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,

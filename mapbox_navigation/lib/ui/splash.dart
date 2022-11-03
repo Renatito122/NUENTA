@@ -22,28 +22,27 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-  
   @override
   void initState() {
     super.initState();
     final _dbRef = FirebaseDatabase.instance.ref();
     var tableRef = _dbRef.child("SampleData");
-    myFunction(_dbRef);
+    //myFunction(_dbRef);
     initializeLocationAndSave();
   }
 
-  void myFunction(_dbRef) async{
+  void myFunction(_dbRef) async {
     _dbRef.once().then((DatabaseEvent databaseEvent) {
       print("Data " + databaseEvent.snapshot.value.toString());
       String s = '[' + databaseEvent.snapshot.value.toString() + ']';
       List<dynamic> map = jsonDecode(s);
       List m = map;
       print('LENGTH ' + m.length.toString());
-      for (int i = 0; i< m.length; i++){
-        print('FODASE '+ map[i].toString());
+      for (int i = 0; i < m.length; i++) {
+        print('FODASE ' + map[i].toString());
       }
     });
-}
+  }
 
   void initializeLocationAndSave() async {
     // Ensure all permissions are collected for Locations
@@ -53,7 +52,7 @@ class _SplashState extends State<Splash> {
 
     getRes();
     sleep(Duration(seconds: 1));
-    
+
     _serviceEnabled = await _location.serviceEnabled();
     if (!_serviceEnabled) {
       _serviceEnabled = await _location.requestService();
@@ -68,7 +67,7 @@ class _SplashState extends State<Splash> {
     LocationData _locationData = await _location.getLocation();
     LatLng currentLatLng =
         LatLng(_locationData.latitude!, _locationData.longitude!);
-        //LatLng(40.633067, -8.658986);
+    //LatLng(40.633067, -8.658986);
 
     // Store the user location in sharedPreferences
     sharedPreferences.setDouble('latitude', _locationData.latitude!);
@@ -80,14 +79,20 @@ class _SplashState extends State<Splash> {
       saveDirectionsAPIResponse(i, json.encode(modifiedResponse));
     }
 
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomeManagement(res_name: 'start',)));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (_) => HomeManagement(
+              res_name: 'start',
+            )));
   }
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.black,
-      child: Center(child: Image.asset('assets/image/logo.png', )),
+      child: Center(
+          child: Image.asset(
+        'assets/image/logo.png',
+      )),
     );
   }
 }

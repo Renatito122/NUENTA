@@ -9,15 +9,17 @@ void getRes() async {
   CollectionReference _collectionRef =
       FirebaseFirestore.instance.collection('restaurants');
   restaurants = await getData(_collectionRef);
-  logger.d(restaurants);
-  print('RES: $restaurants');
+  //logger.d(restaurants);
+  logger.d(
+      "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+  //print('RES: $restaurants');
 }
 
 void getUsers() async {
   CollectionReference _collectionRef2 =
       FirebaseFirestore.instance.collection('users');
   users = await getData(_collectionRef2);
-  print('USERS: $users');
+  //print('USERS: $users');
 }
 
 Future<List<Map>> getData(_collectionRef) async {
