@@ -3,7 +3,6 @@ import 'package:mapbox_navigation/screens/home_management.dart';
 import 'package:mapbox_navigation/screens/restaurants_table.dart';
 import 'package:mapbox_navigation/constants/restaurants.dart';
 import 'package:mapbox_navigation/screens/forum.dart';
-import 'package:mapbox_navigation/screens/forum_detail.dart';
 
 class DetailPage extends StatefulWidget {
   final String name;
@@ -219,10 +218,9 @@ class _DetailPageState extends State<DetailPage> {
                               backgroundColor: Color(0xffd17842),
                             ),
                             onPressed: () {
-                              (BuildContext context) => new ForumPage(
-                                    title: 'Forum',
-                                    key: null,
-                                  );
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (_) => ForumPage()));
                               // Navigator.of(context)
                               //     .pushReplacement(MaterialPageRoute(
                               //         builder: (_) => HomeManagement(

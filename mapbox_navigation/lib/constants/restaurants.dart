@@ -10,8 +10,6 @@ void getRes() async {
       FirebaseFirestore.instance.collection('restaurants');
   restaurants = await getData(_collectionRef);
   //logger.d(restaurants);
-  logger.d(
-      "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
   //print('RES: $restaurants');
 }
 
